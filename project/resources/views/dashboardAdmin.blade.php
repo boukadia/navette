@@ -66,26 +66,23 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($announces as $announce )
+                
                 <tr>
-                    <td>1</td>
-                    <td>Annonce 1</td>
-                    <td>Description de l'annonce 1</td>
-                    <td>100€</td>
+                    
+                    <td>{{ $announce['title'] }}</td>
+                    <td>{{ $announce['description'] }}</td>
+                    <td>{{ $announce['dateDebut'] }}</td>
+                    <td>{{ $announce['dateFin'] }}</td>
+                    <td>{{ $announce['heure-depart'] }}</td>
+                    <td>{{ $announce['heure-arrive'] }}</td>
                     <td>
                         <button class="btn btn-warning btn-sm">Modifier</button>
                         <button class="btn btn-danger btn-sm">Supprimer</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Annonce 2</td>
-                    <td>Description de l'annonce 2</td>
-                    <td>200€</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm">Modifier</button>
-                        <button class="btn btn-danger btn-sm">Supprimer</button>
-                    </td>
-                </tr>
+                @endforeach
+               
             </tbody>
         </table>
     </div>

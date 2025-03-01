@@ -16,20 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::post('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/index',[UserController::class,'index']);
-// Route::get('/register',[AuthController::class,'register']);
-// Route::post('/register',[AuthController::class,'registerPost']);
-Route::get('/',[AnnounceController::class,'index']);
+//user
 Route::get('/login',[userController::class,'loginForm']);
 Route::post('/login',[userController::class,'login']);
 Route::get('/register',[userController::class,'registerForm']);
 Route::post('/register',[userController::class,'register']);
+//announces
 Route::get("/dashboard",[AnnounceController::class,"index"]);
+Route::get('/',[AnnounceController::class,'index']);
+Route::get("/create",[AnnounceController::class,"form"]);
+Route::post("/create",[AnnounceController::class,"create"]);
+Route::post("/update",[AnnounceController::class,"update"]);
+Route::post("/edit",[AnnounceController::class,"form"]);
 

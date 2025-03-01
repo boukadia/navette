@@ -37,6 +37,18 @@
             background: #007bff;
             color: white;
         }
+        .create-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .create-btn:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -55,23 +67,23 @@
             </div>
         </nav>
         <h2 class="mt-4">Tableau de bord des annonces</h2>
+        <!-- Button to create new announce -->
+        <a href="/create" class="create-btn mb-3">Créer une annonce</a>
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
-                
                     <th>Titre</th>
                     <th>Description</th>
-                    <th>Prix</th>
-                    <th>Actions</th>
-                    <th>Actions</th>
+                    <th>Date Début</th>
+                    <th>Date Fin</th>
+                    <th>Heure Départ</th>
+                    <th>Heure Arrivée</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($announces as $announce )
-                
+                @foreach ($announces as $announce)
                 <tr>
-                    
                     <td>{{ $announce['title'] }}</td>
                     <td>{{ $announce['description'] }}</td>
                     <td>{{ $announce['dateDebut'] }}</td>
@@ -79,12 +91,11 @@
                     <td>{{ $announce['heure-depart'] }}</td>
                     <td>{{ $announce['heure-arrive'] }}</td>
                     <td>
-                        <button class="btn btn-warning btn-sm">Modifier</button>
-                        <button class="btn btn-danger btn-sm">Supprimer</button>
+                        <a href="/edit" class="btn btn-warning btn-sm">Modifier</a>
+                        <a href="/delete" class="btn btn-danger btn-sm">Supprimer</a>
                     </td>
                 </tr>
                 @endforeach
-               
             </tbody>
         </table>
     </div>
