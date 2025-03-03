@@ -11,43 +11,43 @@
     <div class="container mt-5">
         <div class="card shadow-lg p-4">
         <h2 class="text-center mb-4">Créer une annonce</h2>
-        <form action="/create" method="POST">
+        <form action="{{ Route("update",parameters: $announce->id) }}" method="POST">
         
             @csrf
             <!-- Nom de l'annonce -->
             <div class="mb-3">
                 <label class="form-label">Nom de l'annonce :</label>
-                <input type="text" name="title" class="form-control" placeholder="Nom de l'annonce" required>
+                <input type="text" value="{{ $announce->title }}" name="title" class="form-control" placeholder="Nom de l'annonce" required>
             </div>
 
             <!-- Description -->
             <div class="mb-3">
                 <label class="form-label">Description :</label>
-                <textarea name="description" class="form-control" rows="4" placeholder="Entrez la description" required></textarea>
+                <textarea name="description"  class="form-control" rows="4" placeholder="Entrez la description" required>{{ $announce->description }}</textarea>
             </div>
 
             <!-- Date de début -->
             <div class="mb-3">
                 <label class="form-label">Date de début :</label>
-                <input type="date" name="dateDebut" class="form-control" required>
+                <input type="date" name="dateDebut" value="{{  $announce->dateDebut }}"  class="form-control" required>
             </div>
             
             <!-- Date de fin -->
             <div class="mb-3">
                 <label class="form-label">Date de fin :</label>
-                <input type="date" name="dateFin" class="form-control" required>
+                <input type="date" name="dateFin" value="{{  $announce->dateFin }}" class="form-control" required>
             </div>
 
             <!-- Heure de départ -->
             <div class="mb-3">
                 <label class="form-label">Heure de départ :</label>
-                <input type="time" name="heure-depart" class="form-control" required>
+            <input type="time" name="heure-depart" value="{{  $announce['heure-depart' ] }}" class="form-control" required>
             </div>
             
             <!-- Heure d'arrivée -->
             <div class="mb-3">
                 <label class="form-label">Heure d'arrivée :</label>
-                <input type="time" name="heure-arrive" class="form-control" required>
+                <input type="time" name="heure-arrive"  value="{{  $announce['heure-arrive' ] }}" class="form-control" required>
             </div>
             
             <!-- Bouton de soumission -->

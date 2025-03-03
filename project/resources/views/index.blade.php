@@ -1,39 +1,7 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
-    <a href="/formInsertion">insertion</a>
-    <table>
-        <thead>
-            <tr>
-                <th>title</th>
-                <th>description</th>
-                <th>price</th>
-                <th>action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($announces as $product )
 
-            <tr>
-                <td>{{ $product->name }}</td>
-                <td>{{ $product->description }}</td>
-                <td>{{ $product->price }}</td>
-                <td><button>delete</button></td>
-                <td><button>modifier</button></td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-</body>
 
-</html> -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -134,7 +102,7 @@ body {
 
             <!-- Actions -->
             <div class="d-flex align-items-center gap-2">
-                <a class="btn btn-light d-none d-sm-inline-flex border" href="/login">Sign in</a>
+                <a class="btn btn-light d-none d-sm-inline-flex border" href="/register">Sign in</a>
                 <a class="btn btn-primary" href="/login">Login</a>
             </div>
         </div>
@@ -165,68 +133,3 @@ body {
 
 
 
- <!-- <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Annonces</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .card {
-            background-color: #f8f9fa;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-</head>
-<body>
-    <div class="container mt-5">
-        <h2>Tableau de bord des annonces</h2>
-        <table class="table table-bordered mt-3">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Titre</th>
-                    <th>Description</th>
-                    <th>Prix</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Annonce 1</td>
-                    <td>Description de l'annonce 1</td>
-                    <td>100€</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm">Modifier</button>
-                        <button class="btn btn-danger btn-sm">Supprimer</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Annonce 2</td>
-                    <td>Description de l'annonce 2</td>
-                    <td>200€</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm">Modifier</button>
-                        <button class="btn btn-danger btn-sm">Supprimer</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html> -->

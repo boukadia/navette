@@ -26,6 +26,7 @@ Route::get("/dashboard",[AnnounceController::class,"index"]);
 Route::get('/',[AnnounceController::class,'index']);
 Route::get("/create",[AnnounceController::class,"form"]);
 Route::post("/create",[AnnounceController::class,"create"]);
-Route::post("/update",[AnnounceController::class,"update"]);
-Route::post("/edit",[AnnounceController::class,"form"]);
+Route::post("{id}/update",[AnnounceController::class,"update"])->name('update');
+Route::get("{id}/edit",[AnnounceController::class,"edit"])->name('edit');
+Route::get("{id}/delete",[AnnounceController::class,"delete"])->name('delete');
 

@@ -27,7 +27,7 @@
 
 <div class="center-container">
     <div class="register-card bg-white p-4">
-        <h2 class="text-center mb-4">Inscription</h2>
+        <h2 class="text-center mb-4">Login</h2>
         <form method="post" action="/login">
             @csrf
            

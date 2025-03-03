@@ -91,8 +91,10 @@
                     <td>{{ $announce['heure-depart'] }}</td>
                     <td>{{ $announce['heure-arrive'] }}</td>
                     <td>
-                        <a href="/edit" class="btn btn-warning btn-sm">Modifier</a>
-                        <a href="/delete" class="btn btn-danger btn-sm">Supprimer</a>
+                    
+
+                        <a href="{{ route('edit', parameters: $announce->id) }}" class="btn btn-warning btn-sm">Modifier</a>
+                        <a href="{{ Route('delete',parameters:$announce->id) }}" class="btn btn-danger btn-sm">Supprimer</a>
                     </td>
                 </tr>
                 @endforeach
