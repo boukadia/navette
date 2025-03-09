@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -37,59 +37,57 @@
             background: #007bff;
             color: white;
         }
+        .create-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .create-btn:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
     
-    <div class="sidebar">
-        
-        <h3>Admin Dashboard</h3>
-        <a href="#">Tableau de bord</a>
-        <a href="#">Gérer les annonces</a>
-        <a href="/roleAll">Gérer les roles</a>
-        <a href="#">Utilisateurs</a>
-        <a href="/tag">Affichage les Tags</a>
-        <a href="{{ route("logOut") }}">Déconnexion</a>
-        
-    </div>
-    <div class="content">
+
+<div class="content">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <span class="navbar-brand">Dashboard Admin</span>
             </div>
         </nav>
         <h2 class="mt-4">Tableau de bord des annonces</h2>
+        <!-- Button to create new announce -->
+        <a href="/role" class="create-btn mb-3">Créer une Role</a>
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Titre</th>
-                    <th>Description</th>
-                    <th>Prix</th>
+                   
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($announces as $announce )
-                
+                @foreach ($roles as $role)
                 <tr>
-                    
-                    <td>{{ $announce['title'] }}</td>
-                    <td>{{ $announce['description'] }}</td>
-                    <td>{{ $announce['dateDebut'] }}</td>
-                    <td>{{ $announce['dateFin'] }}</td>
-                    <td>{{ $announce['heure-depart'] }}</td>
-                    <td>{{ $announce['heure-arrive'] }}</td>
+                    <td>{{ $role['name'] }}</td>
+                   
                     <td>
-                        <button class="btn btn-warning btn-sm">Modifier</button>
-                        <button class="btn btn-danger btn-sm">Supprimer</button>
+                        <a href="{{ route('editRole', parameters: $role) }}" class="btn btn-warning btn-sm">Modifier</a>
+                        <a href="{{ Route('deleteRole',parameters:$role) }}" class="btn btn-danger btn-sm">Supprimer</a>
                     </td>
                 </tr>
                 @endforeach
-               
             </tbody>
         </table>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
 </body>
 </html>

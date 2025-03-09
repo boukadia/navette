@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('announces', function (Blueprint $table) {
+                $table->unsignedBigInteger('tagId')->after('user_id')->nullable();
+                $table->foreign('tagId')->references('id')->on('tags')->onDelete('set null');
+            
         });
     }
 
@@ -22,6 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('eorders');
+        Schema::table('announces', function (Blueprint $table) {
+            //
+        });
     }
 };

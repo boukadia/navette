@@ -18,4 +18,8 @@ class Announce extends Model
         'dateFin',
         'user_id',
     ];
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

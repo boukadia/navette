@@ -40,10 +40,14 @@
             </div>
             <div class="mb-3">
                 <label for="role" class="form-label">Choisir un rôle</label>
-                <select class="form-select" name="roleId" id="roleId" required>
+                <select class="form-select" name="role_id" id="role_id" required>
+
                     <option value="" selected disabled>-- Sélectionnez un rôle --</option>
-                    <option value="1">societe</option>
-                    <option value="2">client</option>
+                    @foreach ($roles as $role)
+                    
+                    <option value="{{ $role->id }}">{{$role->name  }}</option>
+                    @endforeach
+                    
                 </select>
             </div>
             <div class="mb-3">

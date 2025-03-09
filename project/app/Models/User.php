@@ -21,8 +21,16 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'roleId',
+        'role_id',
     ];
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+    public function permission()
+    {
+        return $this->belongsToMany(Permission::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -42,9 +50,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function index(){
-        // $user=User::all();
-       
-
-    }
 }
